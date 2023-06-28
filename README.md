@@ -4,7 +4,7 @@ Develop REST and GraphQL API with CRUD operations on Student and Subject entitie
 
 ### ScreenShots
 
-#### REST
+#### REST API
 
 Get Student by Id
 ![Get Student by Id](/src/main/resources/ss/rest_get.png?raw=true "Get")
@@ -21,7 +21,7 @@ Update Student Detail
 Delete Student
 ![Delete Student](/src/main/resources/ss/rest_delete.png?raw=true "Delete")
 
-#### GraphQL
+#### GraphQL API
 
 Get Students
 ![Get Students](/src/main/resources/ss/graphql_get_studs.png?raw=true "Get")
