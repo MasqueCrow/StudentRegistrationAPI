@@ -1,4 +1,4 @@
-package com.wileyedge.restfulservice.user;
+package com.sg.restfulservice.user;
 
 import java.util.Date;
 

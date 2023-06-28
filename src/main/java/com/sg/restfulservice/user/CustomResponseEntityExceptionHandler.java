@@ -1,4 +1,4 @@
-package com.wileyedge.restfulservice.user;
+package com.sg.restfulservice.user;
 
 import java.util.Date;
 
@@ -25,11 +25,10 @@ public class CustomResponseEntityExceptionHandler extends ResponseEntityExceptio
 		return expResp;
 	}
 	
-//	
-	@ExceptionHandler(UserNotFoundException.class)
+	@ExceptionHandler(StudentNotFoundException.class)
 	@ResponseStatus(value = HttpStatus.NOT_FOUND)
 //	public final ResponseEntity<Object> handleUserNotFoundException(UserNotFoundException ex, WebRequest req) {
-	public final ExceptionResponse handleUserNotFoundException(UserNotFoundException ex, WebRequest req) {
+	public final ExceptionResponse handleUserNotFoundException(StudentNotFoundException ex, WebRequest req) {
 		ExceptionResponse expResp = new ExceptionResponse(new Date(),ex.getMessage(),"The Requested User ID is not present in the system");
 		return expResp;
 	}

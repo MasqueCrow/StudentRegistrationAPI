@@ -1,14 +1,19 @@
-package com.wileyedge.model;
+package com.sg.model;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-
-import org.springframework.stereotype.Component;
+import javax.persistence.JoinColumn;
 
 @Entity
 @Table(name="student")
@@ -28,8 +33,14 @@ public class Student {
 	@Column(name = "mobile_no")
 	private int mobileNo;
 	
-	@Column(name = "address")
-	private String address;
+	@Column(name = "city")
+	private String city;
+	
+	@ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "student_subject",
+            joinColumns = @JoinColumn(name = "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "subject_id"))
+	private List<Subject> subjects;
 	
 	//default constructor needs to be added for creating bean
 	//otherwise exception occurs
@@ -37,19 +48,19 @@ public class Student {
 		
 	}
 	
-	public Student(int id, String name, int age, int mobileNo, String address) {
+	public Student(int id, String name, int age, int mobileNo, String city) {
 		this.id = id;
 		this.name = name;
 		this.age = age;
 		this.mobileNo = mobileNo;
-		this.address = address;
+		this.city = city;
 	}
 	
-	public Student(String name, int age, int mobileNo, String address) {
+	public Student(String name, int age, int mobileNo, String city) {
 		this.name = name;
 		this.age = age;
 		this.mobileNo = mobileNo;
-		this.address = address;
+		this.city = city;
 	}
 
 	public String getName() {
@@ -76,12 +87,12 @@ public class Student {
 		this.mobileNo = mobileNo;
 	}
 
-	public String getAddress() {
-		return address;
+	public String getCity() {
+		return city;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public void setCity(String city) {
+		this.city = city;
 	}
 
 	public int getId() {
@@ -93,5 +104,15 @@ public class Student {
 	}
 	
 	
+	public void addSubject(Subject subject) {
+		if (subjects == null) {
+			subjects = new ArrayList<>();
+		}
+		subjects.add(subject);
+	}
+	
+	public List<Subject> getSubjects() {
+		return subjects;
+	}
 	
 }

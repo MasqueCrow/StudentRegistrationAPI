@@ -1,8 +1,8 @@
-package com.wileyedge.service;
+package com.sg.service;
 
 import java.util.List;
 
-import com.wileyedge.model.Student;
+import com.sg.model.Student;
 
 public interface IService {
 	Student saveStudent(Student stud);

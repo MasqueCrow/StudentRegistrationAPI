@@ -1,9 +1,9 @@
-package com.wileyedge.dao;
+package com.sg.dao;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.wileyedge.model.Student;
+import com.sg.model.Student;
 
 //similar methods as JpaRepository out-of-the-box methods
 public interface IDao {
