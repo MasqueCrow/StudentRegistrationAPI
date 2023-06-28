@@ -1,6 +1,36 @@
 # StudentRegistration API
 
-Develop REST and GraphQL API with CRUD operations on Student and Subject entities to learn how to build microservices
+Develop REST and GraphQL API with CRUD operations on Student and Subject entities to learn about building microservices
+
+### ScreenShots
+
+#### REST
+
+Get Student by Id
+![Get Student by Id](/src/main/resources/ss/rest_get.png?raw=true "Get")
+
+Get All Students
+![Get Students](/src/main/resources/ss/rest_get_all.png?raw=true "Get")
+
+Register New Student
+![New Student](/src/main/resources/ss/rest_new.png?raw=true "New")
+
+Update Student Detail
+![Update Student](/src/main/resources/ss/rest_update.png?raw=true "Put")
+
+Delete Student
+![Delete Student](/src/main/resources/ss/rest_delete.png?raw=true "Delete")
+
+#### GraphQL
+
+Get Students
+![Get Students](/src/main/resources/ss/graphql_get_studs.png?raw=true "Get")
+
+Get Subjects
+![Get Subjects](/src/main/resources/ss/graphql_get_subjs.png?raw=true "Get")
+
+Assign Subjects to Student
+![Get Subjects to Student](/src/main/resources/ss/graphql_assign_subjs_to_studs.png?raw=true "Get")
 
 ### Setup
 
@@ -15,6 +45,7 @@ $ git clone https://github.com/MasqueCrow/StudentRegistrationAPI.git
 Next, install and update Maven dependencies defined in pom.xml 
 
 Then, create a new database schema in mySql Workbench with the following tables:
+
 **Student**
 
 | Column    | Type         | Nullable |
