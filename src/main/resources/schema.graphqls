@@ -1,0 +1,27 @@
+type Student {
+	id: ID!
+	name: String!
+	age: Int
+	mobile_no: Int
+	city: String!
+	subjects: [Subject]! # Add the 'subjects' field
+}
+
+type Subject {
+	id: ID!
+	name: String
+	students: [Student]!
+}
+
+type Query {
+	getAllStudents: [Student]!
+	getStudent(id: ID!): Student
+	getAllSubjects: [Subject]!
+	getSubject(id: ID!): Subject
+}
+
+type Mutation {
+	createStudent(name: String!): Student!
+	createSubject(name: String!): Subject!
+	assignSubjectToStudent(studentId: ID!, subjectId: ID!): Student!
+}
